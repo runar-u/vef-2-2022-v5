@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-//import { Link } from 'react-router-dom';
 import { Button } from '../form/Button';
 import { Input } from '../form/Input';
 import s from './Event.module.scss';
+import { Login } from '../login/Login';
 
 
 export function Event({ title, description, registrations, loggedin }) {
@@ -51,7 +51,10 @@ export function Event({ title, description, registrations, loggedin }) {
         </>
       )}
 
-      <p><a href="/">Til baka</a></p>
+    <Login
+        loggedin={loggedin}
+        name={name}
+    />
     </section>
   )
 }

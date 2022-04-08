@@ -4,7 +4,7 @@ import { Event } from '../../components/event/Event';
 
 
 
-export default function eventpage({ event }) {
+export default function Eventpage() {
     const router = useRouter();
 
     const [loading, setLoading] = useState(false);
@@ -41,7 +41,7 @@ export default function eventpage({ event }) {
             
             fetchData();
         }
-    }, [router.isReady]);
+    }, [router.isReady, router.query.id]);
 
     if (error) {
         return <p>Villa kom upp: {error}</p>
@@ -51,7 +51,7 @@ export default function eventpage({ event }) {
         return <p>Sæki gögn...</p>;
     }
 
-    const loggedin = true;
+    const loggedin = false;
     if (data) {
         
         return (

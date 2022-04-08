@@ -3,7 +3,7 @@ import { Events } from "../components/events/Events";
 import { Layout } from "../components/layout/Layout";
 import { Login } from "../components/login/Login";
 
-export default function events() {
+export default function Index() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [data, setData] = useState(null);
@@ -45,21 +45,18 @@ export default function events() {
 
     const loggedin = false;
     const name= null;
-    function onRegister() {}
-    function onLogout() {}
     const title = 'Viðburðasíðan';
     if (data) {
         return (
             <Layout
                 title={title}
-                children={<Events title="Viðburðir á næstunni" events={data.items} />}
                 footer={<Login
                     loggedin={loggedin}
                     name={name}
-                    onRegister={onRegister}
-                    onLogout={onLogout}
                 />}
-            />
+            >
+                <Events title="Viðburðir á næstunni" events={data.items} />
+            </Layout>
         )
     }
 

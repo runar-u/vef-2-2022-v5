@@ -1,8 +1,6 @@
 export function Login({
     loggedin = false,
     name,
-    onRegister,
-    onLogout,
   }) {
     if (loggedin) {
       return (

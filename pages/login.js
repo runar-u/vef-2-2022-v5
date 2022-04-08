@@ -6,10 +6,18 @@ export default function Login() {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
 
-    function onSubmit(e) {
+    async function onSubmit(e) {
         e.preventDefault();
         console.log(username);
         console.log(password);
+        const result = await fetch('https://vef2-20222-v3-synilausn.herokuapp.com/users/login', 
+            {
+                method: 'POST',
+                body: {username, password}
+            }
+        )
+        const data = result.json();
+        console.log(data);
     }
 
     return (
