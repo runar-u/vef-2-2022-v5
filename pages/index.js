@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Events } from "../components/events/Events";
+import { Layout } from "../components/layout/Layout";
+import { Login } from "../components/login/Login";
 
 export default function events() {
     const [loading, setLoading] = useState(false);
@@ -41,9 +43,24 @@ export default function events() {
         return <p>Sæki gögn...</p>;
     }
 
+    const loggedin = false;
+    const name= null;
+    function onRegister() {}
+    function onLogout() {}
+    const title = 'Viðburðasíðan';
     if (data) {
-        console.log(data);
-        return <Events title="Viðburðir á næstunni" events={data.items} />;
+        return (
+            <Layout
+                title={title}
+                children={<Events title="Viðburðir á næstunni" events={data.items} />}
+                footer={<Login
+                    loggedin={loggedin}
+                    name={name}
+                    onRegister={onRegister}
+                    onLogout={onLogout}
+                />}
+            />
+        )
     }
 
     return null;
