@@ -2,6 +2,6 @@
 
 Rúnar Unnsteinsson, ruu1@hi.is
 
-_bæta við slóð á vercel_
+Vercel link: [https://vercel.com/runar-u/vef-2-2022-v5/4gkZMUrrMhUcY9qcsxE8L6bRwoo1]
 
 Athugasemd: mér tókst ekki að fá innskráninguna/nýskráninguna til að virka, þ.a. það og notkun á context er ekki kláruð.
